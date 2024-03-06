@@ -1,7 +1,7 @@
 # Youtube Downloader
 To create a Python application for downloading YouTube videos on Linux, you can use the pytube library, which is a lightweight and easy-to-use library for accessing YouTube videos.
 
-- OS [Fedora](https://fedoraproject.org) and [Debian](https://www.debian.org/) with [GNOME Desktop](https://www.gnome.org/)                
+- OS Fedora and Debian with [GNOME Desktop](https://www.gnome.org/)                
 
 Here are the steps to create a simple YouTube video downloader app:
 Before you go any further, make sure you have Python and that the expected version is available from your command line. You can check this by running:
