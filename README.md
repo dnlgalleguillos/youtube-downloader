@@ -93,3 +93,5 @@ This is great for downloading a video of more than 11 hours of study.
   Video downloaded successfully: /home/daniel/Videos/./Harvard CS50’s Artificial Intelligence with Python – Full University Course.mp4
 ```
 This is a basic example, and you may want to add more features, such as downloading specific video resolutions or creating a simple GUI for a better user experience. Keep in mind that downloading YouTube videos may violate YouTube's terms of service, so make sure to use this script responsibly and in compliance with YouTube's policies.
+
+Although [You-Get](https://github.com/soimort/you-get) is a viable option for those who prefer the command line and simplicity of use, those seeking faster downloads may opt for alternatives that can offer higher download speeds.  
