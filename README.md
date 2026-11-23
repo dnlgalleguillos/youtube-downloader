@@ -2,7 +2,7 @@
 
 ![Downloader_Banner](https://github.com/dnlgalleguillos/youtube-downloader/assets/23320192/c161a2b2-d00a-4599-bf8c-8cc772fda8a5)
 
-To create a Python application for downloading YouTube videos on Linux, you can use the pytube library, which is a lightweight and easy-to-use library for accessing YouTube videos.
+To create a Python application for downloading YouTube videos on Linux, you can use the pytubefix library, which is a lightweight and easy-to-use library for accessing YouTube videos.
 
 - Linux OS Fedora and Debian with [GNOME Desktop](https://www.gnome.org/)                
 
@@ -31,49 +31,24 @@ While pip alone is sufficient to install from pre-built binary archives, up to d
   python3 -m pip install --upgrade pip setuptools wheel
 ```
 
-Install the pytube library:
+Install ffmpeg (used to merge the video and audio streams):
 
 ```bash
-  pip install pytube
+  sudo apt install ffmpeg      # Debian
+  sudo dnf install ffmpeg      # Fedora
 ```
 
-Create a Python script (youtube_downloader.py) with the following code:
+Create a virtual environment and install [pytubefix](https://github.com/JuanBindez/pytubefix) (the maintained fork of pytube, which no longer works with YouTube):
 
 ```bash
-  from pytube import YouTube
-
-def download_video(url, output_path='.'):
-    try:
-        # Create a YouTube object
-        yt = YouTube(url)
-
-        # Get the highest resolution stream
-        video_stream = yt.streams.get_highest_resolution()
-
-        # Set the output path for the downloaded video
-        output_file = video_stream.download(output_path)
-
-        print(f"Video downloaded successfully: {output_file}")
-
-    except Exception as e:
-        print(f"Error: {e}")
-
-if __name__ == "__main__":
-    # Replace 'YOUR_VIDEO_URL' with the actual YouTube video URL
-    video_url = input("Enter the YouTube video URL: ")
-    
-    # Replace 'YOUR_OUTPUT_PATH' with the desired output path
-    output_path = input("Enter the output path (press Enter for the current directory): ")
-
-    if not output_path:
-        output_path = '.'
-
-    download_video(video_url, output_path)
+  python3 -m venv .venv
+  .venv/bin/pip install -r requirements.txt
 ```
+
 Run the script:
 
 ```bash
-  python youtube_downloader.py
+  .venv/bin/python youtube_downloader.py
 ```
 Enter the YouTube video URL when prompted, and press Enter.
 
